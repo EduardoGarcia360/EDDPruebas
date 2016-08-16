@@ -16,6 +16,7 @@ SOURCES += main.cpp\
         mainprueba.cpp
 
 HEADERS  += mainprueba.h \
-    listasimple.h
+    listasimple.h \
+    listadoble.h
 
 FORMS    += mainprueba.ui
