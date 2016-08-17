@@ -1,10 +1,16 @@
 #include "mainprueba.h"
 #include "ui_mainprueba.h"
+#include "string.h"
+
 /* incluyendo listas */
 #include "listasimple.h"
 #include "listadoble.h"
 
-#include "string.h"
+/* otras librerias */
+#include <QFileDialog>
+#include <QMessageBox>
+
+
 using namespace std;
 char* unido = (char*)malloc(sizeof(char));
 void mostrar(NODO *cima);
@@ -69,4 +75,21 @@ void mostrardoble(NODOD *cima){
             primero = primero->siguiente;
         }
     }
+}
+
+void MainPrueba::on_btnReprod_clicked()
+{
+    QString nombrearchivo =
+            QFileDialog::getOpenFileName(
+                this,
+                tr("elija un archivo"),
+                "/home/eduardo/",
+                "All files (*.*)"
+                );
+
+    QMessageBox::information(this,tr("File name"),nombrearchivo);
+    char* ruta = (char*)malloc(sizeof(char));
+    /* convertimos el string de la ruta a char */
+    strcpy(ruta,nombrearchivo.toLatin1().constData());
+    ui->lblnombre->setText(ruta);
 }

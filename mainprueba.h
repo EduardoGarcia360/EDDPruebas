@@ -18,6 +18,8 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_btnReprod_clicked();
+
 private:
     Ui::MainPrueba *ui;
 };
